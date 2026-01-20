@@ -2,6 +2,7 @@ import { GameField } from './classes.js';
 
 const canvas = document.getElementById('canvas');
 const winBanner = document.getElementById('win-banner');
+const playAgain = document.getElementById('play-again');
 const ctx = canvas.getContext('2d');
 
 const cellSize = 50;
@@ -36,6 +37,10 @@ function loadPuzzle(puzzle){
 }
 
 loadPuzzle(initialPuzzle);
+
+playAgain.addEventListener('click', () => {
+    loadPuzzle(initialPuzzle);
+});
 
 function validUnit(values){
     const seen = new Set();

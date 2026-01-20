@@ -9,7 +9,13 @@
 <body>
     <div class="board">
         <canvas id="canvas"></canvas>
-        <div id="win-banner" class="win" aria-live="polite">Solved!</div>
+        <div id="win-banner" class="win" aria-live="polite">
+            <div class="win-card" role="dialog" aria-labelledby="win-title" aria-describedby="win-desc">
+                <h2 id="win-title">Sudoku Solved!</h2>
+                <p id="win-desc">Great job finishing the grid.</p>
+                <button id="play-again" type="button">Play again</button>
+            </div>
+        </div>
     </div>
     <script src="index.js" type="module"></script>
 </body>

@@ -1,36 +1,43 @@
 body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color: whitesmoke;
+    margin: 0;
+}
+
+.board{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    background: white;
 }
 
 canvas{
     position: absolute;
-    top: 25%;
-    left: 25%;
-    z-index: 1000;
-    pointer-events: none;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
 }
 
-button.cell{
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    border: 1px solid black;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}   
-
-.sudoku{
-    display: flex;
-    flex-direction: row;
+.win{
     position: absolute;
-    top: 25%;
-    left: 25%;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #155724;
+    background: rgba(255,255,255,0.9);
+    border: 3px solid #28a745;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
 }
 
-div{
-    margin: 0;
-    padding: 0;
+.win.show{
+    opacity: 1;
 }
